@@ -37,7 +37,7 @@ exports.handler = (event, context) => {
             // lets polulate the toStop object with each instance in each reservation
             data.Reservations.forEach((reservation) => {
                 reservation.Instances.forEach((instance) => {
-                    if (instance.State.Name != 'terminated')toStop.InstanceIds.push(instance.InstanceId);
+                    if (instance.State.Name != 'terminated') toStop.InstanceIds.push(instance.InstanceId);
                 });
             });
             stopInstances(toStop);
